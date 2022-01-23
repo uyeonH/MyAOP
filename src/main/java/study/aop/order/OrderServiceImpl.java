@@ -8,20 +8,18 @@ import study.aop.order.annotation.Trace;
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
 
     @Trace
     @Override
     public void getProductById(String id) {
         orderRepository.getProductById(id);
-        //log.info("getProductById");
     }
+
     @Trace
     @Override
     public void getPriceById(String id) {
         orderRepository.getPriceById(id);
-        //log.info("getPriceById");
-
     }
 }
